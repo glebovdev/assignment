@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class RatingResource extends JsonResource
+final class RatingResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

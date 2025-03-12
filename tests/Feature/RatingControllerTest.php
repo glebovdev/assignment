@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use App\Models\Movie;
@@ -7,7 +9,7 @@ use App\Models\Rating;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class RatingControllerTest extends TestCase
+final class RatingControllerTest extends TestCase
 {
     use RefreshDatabase;
 
