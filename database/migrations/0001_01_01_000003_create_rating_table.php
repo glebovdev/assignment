@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('ratings', static function (Blueprint $table) {
             $table->id();
             $table->foreignId('movie_id')->constrained('movies');
             $table->integer('user_id');
-            $table->integer('rating');
+            $table->integer('rating')->index();
             $table->text('comment')->nullable();
             $table->timestamps();
+
+            // Ensure each user can only rate a movie once
+            $table->unique(['user_id', 'movie_id']);
+
+            $table->index('movie_id');
         });
     }
 
