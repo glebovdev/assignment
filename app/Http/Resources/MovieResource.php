@@ -18,7 +18,7 @@ class MovieResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
-            'rating' => $this->ratings()->avg('rating'),
+            'rating' => $this->ratings_avg_rating,
         ];
     }
 }
